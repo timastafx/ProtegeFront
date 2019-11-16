@@ -2,7 +2,10 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class ProtegeService {
-  listClasses: string[] = [];
+  listClasses: {
+    id: number,
+    caption: string
+  }[] = [];
   listRoles = [];
   role;
   classes;

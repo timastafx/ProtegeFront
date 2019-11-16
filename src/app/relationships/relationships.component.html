@@ -9,8 +9,8 @@
     </div>
     <div class="app-quantification__value">
       <label>
-        <span>Стоимость</span>
-        <input [(ngModel)]="item.cost"
+        <span>Роль</span>
+        <input [(ngModel)]="item[1]"
                (input)="item.cost = +$event.target.value"
                type="number">
         <div (click)="onDeleteClick(item)"

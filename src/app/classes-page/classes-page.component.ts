@@ -15,7 +15,10 @@ classes = '';
   }
 
   addToListClasses(classes: string) {
-    this.protegeService.listClasses.push(classes);
+    this.protegeService.listClasses.push({
+        id: Date.now(),
+        caption: classes
+      });
   }
 
 }
