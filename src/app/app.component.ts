@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProtegeService } from './protege.service';
 
 @Component({
   selector: 'my-app',
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent  {
   selected: string = 'Classes';
-
+ constructor (public protegeService: ProtegeService) {}
   public tabsChanged(id: string): void {
     this.selected = id;
   }

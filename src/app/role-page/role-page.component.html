@@ -1,0 +1,4 @@
+<span>Введите роль </span>
+<input [(ngModel)]="roles">
+<button (click)="addToListRoles(roles)"> добавить в лист </button>
+<span *ngFor="let roles of this.protegeService.listRoles"> {{roles}} </span>

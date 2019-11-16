@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProtegeService } from '../protege.service';
 
 @Component({
   selector: 'app-role-page',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RolePageComponent implements OnInit {
 
-  constructor() { }
-
+ constructor (public protegeService: ProtegeService) {}
+roles = '';
   ngOnInit() {
   }
 
+addToListRoles(roles: string) {
+    this.protegeService.listRoles.push(roles);
+  }
 }

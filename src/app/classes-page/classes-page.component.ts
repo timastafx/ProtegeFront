@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProtegeService } from '../protege.service';
 
 @Component({
   selector: 'app-classes-page',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./classes-page.component.css']
 })
 export class ClassesPageComponent implements OnInit {
-
-  constructor() { }
+classes = '';
+  constructor (public protegeService: ProtegeService) {}
 
   ngOnInit() {
+
+  }
+
+  addToListClasses(classes: string) {
+    this.protegeService.listClasses.push(classes);
   }
 
 }

@@ -1,0 +1,36 @@
+  <div *ngFor="let item of this.protegeService.relationships" class="app-quantification__ticker">
+    <div class="app-quantification__name">
+      <label>
+        <span>Концепт 1</span>
+        <input [(ngModel)]="item[0]"
+               (input)="item.name = $event.target.value"
+               type="text">
+      </label>
+    </div>
+    <div class="app-quantification__value">
+      <label>
+        <span>Стоимость</span>
+        <input [(ngModel)]="item.cost"
+               (input)="item.cost = +$event.target.value"
+               type="number">
+        <div (click)="onDeleteClick(item)"
+             class="app-quantification__delete">
+        </div>
+      </label>
+    </div>
+     <div class="app-quantification__name">
+      <label>
+        <span>Концепт 2</span>
+        <input [(ngModel)]="item[2]"
+               (input)="item.name = $event.target.value"
+               type="text">
+      </label>
+    </div>
+  </div>
+
+  <div class="app-quantification__text-block">
+    <span class="app-quantification__text"
+          (click)="onAddClick()">
+      Добавить бумагу
+    </span>
+  </div>

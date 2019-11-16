@@ -7,10 +7,13 @@ import { HelloComponent } from './hello.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { ClassesPageComponent } from './classes-page/classes-page.component';
 import { RolePageComponent } from './role-page/role-page.component';
+import { ProtegeService } from './protege.service';
+import { RelationshipsComponent } from './relationships/relationships.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent, TabsComponent, ClassesPageComponent, RolePageComponent ],
-  bootstrap:    [ AppComponent ]
+  declarations: [ AppComponent, HelloComponent, TabsComponent, ClassesPageComponent, RolePageComponent, RelationshipsComponent ],
+  bootstrap:    [ AppComponent ],
+  providers: [ProtegeService]
 })
 export class AppModule { }
