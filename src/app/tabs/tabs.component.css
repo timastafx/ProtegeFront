@@ -2,5 +2,16 @@
   display: flex;
   width: 100%;
   background-color: aqua;
-  
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tabs__button {
+  cursor: pointer;
+}
+
+.tabs__item-active {
+  text-decoration: underline;
+  text-decoration-color: orange;
+  font-size: 18px;
 }

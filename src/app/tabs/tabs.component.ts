@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-tabs',
@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tabs.component.css']
 })
 export class TabsComponent implements OnInit {
+  checkedId: string = 'Classes';
+  @Output() tabsChanged = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  onClickHandler(id: string) {
+    this.checkedId = id;
+    this.tabsChanged.emit(this.checkedId);
+  }
 }

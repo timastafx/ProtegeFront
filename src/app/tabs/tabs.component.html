@@ -1,4 +1,15 @@
 <div class="tabs">
-  <p>Классы</p>
-  <p>Роли</p>
+
+  <div class="tabs__button" 
+      (click)="onClickHandler('Classes')"
+      [ngClass]="{'tabs__item-active': checkedId === 'Classes'}"
+      >
+    Классы
+  </div>
+  <div class="tabs__button" 
+      (click)="onClickHandler('Role')"
+      [ngClass]="{'tabs__item-active': checkedId === 'Role'}"
+      >
+    Роли
+  </div>
 </div>
