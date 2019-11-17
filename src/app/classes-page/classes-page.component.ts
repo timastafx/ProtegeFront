@@ -19,6 +19,7 @@ classes = '';
         id: Date.now(),
         caption: classes
       });
+      this.classes = '';
   }
 
 }

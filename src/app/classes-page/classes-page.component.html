@@ -1,4 +1,4 @@
 <span>Введите класс </span>
 <input [(ngModel)]="classes">
 <button (click)="addToListClasses(classes)"> добавить в лист </button>
-<span *ngFor="let classes of this.protegeService.listClasses"> {{classes}} </span>
+<span *ngFor="let classes of this.protegeService.listClasses"> {{classes.caption}} </span>

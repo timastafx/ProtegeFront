@@ -1,15 +1,11 @@
 import { Injectable } from '@angular/core';
+import { IRelationship, IClass, IRole }  from './Interfaces/Data';
 
 @Injectable()
 export class ProtegeService {
-  listClasses: {
-    id: number,
-    caption: string
-  }[] = [];
-  listRoles = [];
-  role;
-  classes;
-  relationships = {}
+  listClasses: IClass[] = [];
+  listRoles: IRole[] = [];
+  relationships: IRelationship[] = [];
+  
   constructor() { }
-
 }
