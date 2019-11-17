@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProtegeService } from '../protege.service';
+import { IRelationship } from '../Interfaces/Data';
 
 @Component({
   selector: 'app-relationships',
@@ -7,21 +8,25 @@ import { ProtegeService } from '../protege.service';
   styleUrls: ['./relationships.component.less']
 })
 export class RelationshipsComponent implements OnInit {
-items;
-constructor (public protegeService: ProtegeService) {}
+  items: IRelationship[] = [];
+
+  constructor (public protegeService: ProtegeService) {}
 
   ngOnInit() {
   }
 
    /* @event
-   * Обработка клика
+   * Обработка добавления элемента
    */
   public onAddClick(): void {
     this.items.push({
-      name: '',
-      cost: null,
-      id: Date.now()
+      id: Date.now(),
+      mainClass: null,
+      secondaryClass: null,
+      relationship: null,
     });
+
+    this.protegeService.relationships = this.items;
   }
 
   /* @event
@@ -30,6 +35,4 @@ constructor (public protegeService: ProtegeService) {}
   public onDeleteClick(element): void {
     this.items = this.items.filter(item => item.id !== element.id);
   }
-
-
 }

@@ -9,6 +9,7 @@ export interface IRole {
 }
 
 export interface IRelationship {
+  id: number,
   mainClass: IClass,
   secondaryClass: IClass,
   relationship: string
