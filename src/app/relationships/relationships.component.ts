@@ -9,6 +9,19 @@ import { IRelationship } from '../Interfaces/Data';
 })
 export class RelationshipsComponent implements OnInit {
   items: IRelationship[] = [];
+  relationTypes = [{
+    id: 1,
+    caption: 'Один к одному'
+  }, {
+    id: 2,
+    caption: 'Один ко многим'
+  }, {
+    id: 3,
+    caption: 'Много к одному'
+  }, {
+    id: 4,
+    caption: 'Много ко многим'
+  }]
 
   constructor (public protegeService: ProtegeService) {}
 

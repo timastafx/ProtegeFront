@@ -1,37 +1,47 @@
 <div *ngFor="let item of this.protegeService.relationships" class="app-quantification__ticker">
 	<div class="app-quantification__name">
 		<label>
-        <span>Концепт 1</span>
-        <!-- <input [(ngModel)]="item[0]"
-               (input)="item.name = $event.target.value"
-               type="text"> -->
-               <app-relation-item [item]="item"></app-relation-item>
-      </label>
+      <span>Субъект</span>
+      <p><select name="mainClass">
+        <option disabled>Выберите субъект</option>
+        <option *ngFor="let mainClass of this.protegeService.listClasses" value='mainClass.id'> {{mainClass.caption}}</option>
+      </select></p>
+    </label>
 	</div>
 	<div class="app-quantification__value">
 		<label>
-        <span>Роль</span>
-        <!-- <input [(ngModel)]="item[1]"
-               (input)="item.cost = +$event.target.value"
-               type="number">
-        <div (click)="onDeleteClick(item)"
-             class="app-quantification__delete"> -->
-        <!-- </div> -->
-      </label>
+      <span>Роль</span>
+      <p><select name="mainClass">
+        <option disabled>Выберите Роль</option>
+        <option *ngFor="let role of this.protegeService.listRoles" value='role.id'> {{role.caption}}</option>
+      </select></p>
+    </label>
 	</div>
 	<div class="app-quantification__name">
 		<label>
-        <span>Концепт 2</span>
-        <!-- <input [(ngModel)]="item[2]"
-               (input)="item.name = $event.target.value"
-               type="text"> -->
+        <span>Объект</span>
+        <p><select name="mainClass">
+          <option disabled>Выберите объект</option>
+          <option *ngFor="let mainClass of this.protegeService.listClasses" value='mainClass.id'> {{mainClass.caption}}</option>
+        </select></p>
       </label>
 	</div>
+  <div class="app-quantification__name">
+		<label>
+        <span>Тип связи</span>
+        <p><select name="relationType">
+          <option disabled>Выберите тип связи</option>
+          <option *ngFor="let type of this.relationTypes" value='type.id'> 
+            {{type.caption}}</option>
+        </select></p>
+      </label>
+	</div>
+	<!-- <app-relation-item [item]="item"></app-relation-item> -->
 </div>
 
 <div class="app-quantification__text-block">
 	<span class="app-quantification__text"
           (click)="onAddClick()">
-      Добавить бумагу
+      Добавить связь
     </span>
 </div>
