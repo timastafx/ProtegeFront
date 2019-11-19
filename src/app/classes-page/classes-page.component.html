@@ -1,4 +1,13 @@
-<span>Введите класс </span>
-<input [(ngModel)]="classes">
-<button (click)="addToListClasses(classes)"> добавить в лист </button>
-<span *ngFor="let classes of this.protegeService.listClasses"> {{classes.caption}} </span>
+<div class="classes-page">
+  <div class="classes-page__adds">
+    <span>Введите класс </span>
+    <input [(ngModel)]="classes">
+    <button (click)="addToListClasses(classes)"> добавить в список </button>
+  </div>
+  <div class="classes-page__items">
+    <div *ngFor="let classes of this.protegeService.listClasses"> 
+      {{classes.caption}} 
+      <button (click)="removeClasses(classes)"> Удалить </button>
+    </div>
+  </div>
+</div>
