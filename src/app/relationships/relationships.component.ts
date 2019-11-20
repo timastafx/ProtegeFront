@@ -2,6 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ProtegeService } from '../protege.service';
 import { IRelationship } from '../Interfaces/Data';
 
+interface IAddedOptions {
+  mainClass: number;
+  secondClass: number;
+  role: number;
+  relationType: string;
+}
+
 @Component({
   selector: 'app-relationships',
   templateUrl: './relationships.component.html',
@@ -9,19 +16,10 @@ import { IRelationship } from '../Interfaces/Data';
 })
 export class RelationshipsComponent implements OnInit {
   items: IRelationship[] = [];
-  relationTypes = [{
-    id: 1,
-    caption: 'Один к одному'
-  }, {
-    id: 2,
-    caption: 'Один ко многим'
-  }, {
-    id: 3,
-    caption: 'Много к одному'
-  }, {
-    id: 4,
-    caption: 'Много ко многим'
-  }]
+  mainClass: number = null;
+  secondClass: number = null;
+  role: number = null;
+  relationType: string = null;
 
   constructor (public protegeService: ProtegeService) {}
 
@@ -31,15 +29,27 @@ export class RelationshipsComponent implements OnInit {
    /* @event
    * Обработка добавления элемента
    */
-  public onAddClick(): void {
-    this.items.push({
+  public onAddClick(options: IAddedOptions): void {
+    this.protegeService.relationships.push({
       id: Date.now(),
-      mainClass: null,
-      secondaryClass: null,
-      relationship: null,
+      mainClassId: options.mainClass,
+      secondaryClassId: options.secondClass,
+      roleId: options.role,
+      relationship: options.relationType
     });
 
-    this.protegeService.relationships = this.items;
+    this.zeroize();
+  }
+
+  /**
+   * @private
+   * Обнулить значение селекторов
+   */
+  private zeroize(): void {
+    this.mainClass = null;
+    this.secondClass = null;
+    this.role = null;
+    this.relationType = null;
   }
 
   /* @event

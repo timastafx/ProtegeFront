@@ -15,6 +15,14 @@ export interface IRole {
 }
 
 /**
+ * Интерфейс типа отношений
+ */
+export interface IRelationshipType {
+  id: number;
+  caption: string;
+}
+
+/**
  * Интерфейс отношения между классами
  */
 export interface IRelationship {

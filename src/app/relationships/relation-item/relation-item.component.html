@@ -1,3 +1,18 @@
-<p>
-  {{ item.id }}
-</p>
+<div class="app-relation-item">
+  <div class="app-relation-item__main-class app-relation-item__item">
+    <span>Класс субъект</span>
+    <span>{{ mainClassCaption }}</span>
+  </div>
+  <div class="app-relation-item__secondary-class app-relation-item__item">
+    <span>Класс объект</span>
+    <span>{{ secondaryClassCaption }}</span>
+  </div>
+  <div class="app-relation-item__role app-relation-item__item">
+    <span>Роль</span>
+    <span>{{ roleCaption }}</span>
+  </div>
+  <div class="app-relation-item__relationship app-relation-item__item">
+    <span>Тип связи</span>
+    <span>{{ relationshipCaption }}</span>
+  </div>
+</div>

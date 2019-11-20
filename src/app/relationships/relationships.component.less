@@ -1,20 +1,5 @@
-.app-quantification {
-
-  &__amount {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 15px;
-  }
-
-  &__ticker {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-  }
-
-  & input {
-    margin-left: 15px;
-  }
+.app-relationships {
+  display: flex;
 
   &__text-block {
     display: flex;
@@ -29,54 +14,6 @@
 
     &:hover {
       color: darkblue;
-    }
-  }
-
-  &__quantity-result,
-  &__total-cost-result {
-    display: flex;
-    align-items: center;
-    padding-right: 5px;
-  }
-
-  & h2 {
-    margin: 0 5px;
-  }
-
-  &__value {
-    position: relative;
-  }
-
-  &__delete {
-    position: absolute;
-    right: -22px;
-    top: 2px;
-    width: 16px;
-    height: 16px;
-    opacity: 0.3;
-    cursor: pointer;
-    margin-left: 5px;
-
-    &:hover {
-      opacity: 1;
-    }
-
-    &:before,
-    &:after {
-      display: inline-block;
-      content: ' ';
-      height: 16px;
-      width: 1px;
-      background-color: #333;
-    }
-
-    &:before {
-      transform: rotate(45deg);
-      margin-left: 8px;
-    }
-
-    &:after {
-      transform: rotate(-45deg);
     }
   }
 }

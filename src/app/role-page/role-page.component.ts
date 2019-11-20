@@ -38,6 +38,6 @@ export class RolePageComponent implements OnInit {
 
   removeRoles(role: IRole): void {
     this.protegeService.listRoles =
-      this.protegeService.listClasses.filter(item => item.id !== role.id);
+      this.protegeService.listRoles.filter(item => item.id !== role.id);
   } 
 }
