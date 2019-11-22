@@ -1,17 +1,26 @@
 .tabs {
   display: flex;
   width: 100%;
-  background-color: aqua;
+  background-color: white;
   justify-content: space-around;
   align-items: center;
+  margin-bottom: 1em;
+  border: 1px solid orange;
 
   &__button {
+    display: flex;
+    justify-content: center;
+    width: 35%;
     cursor: pointer;
   }
 
+  &__button:hover {
+    background-color: orange;
+  }
+
   &__item-active {
-    text-decoration: underline;
-    text-decoration-color: orange;
-    font-size: 18px;
+    background-color: orangered;
   }
 }
+
+

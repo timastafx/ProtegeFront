@@ -1,13 +1,16 @@
 <div class="classes-page">
   <div class="classes-page__adds">
     <span>Введите класс </span>
-    <input [(ngModel)]="classes">
-    <button (click)="addToListClasses(classes)"> добавить в список </button>
+    <input style="margin-left: 1em" [(ngModel)]="classes">
+    <button (click)="addToListClasses(classes)"> + </button>
   </div>
-  <div class="classes-page__items">
-    <div *ngFor="let classes of this.protegeService.listClasses"> 
-      {{classes.caption}} 
-      <button (click)="removeClasses(classes)"> Удалить </button>
+
+  <div class="classes-page__items app-tabs__default-item-box">
+    Доступные классы:
+    <div class="item" *ngFor="let classes of this.protegeService.listClasses">
+      <div class="title"> {{classes.caption}} </div>
+      <button (click)="removeClasses(classes)"> - </button>
     </div>
   </div>
+
 </div>

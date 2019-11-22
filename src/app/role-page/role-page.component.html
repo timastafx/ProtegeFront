@@ -1,13 +1,14 @@
 <div class="role-page">
   <div class="role-page__adds">
     <span>Введите роль </span>
-    <input [(ngModel)]="role">
-    <button (click)="addToListRoles(role)"> добавить в список </button>
+    <input style="margin-left: 1em" [(ngModel)]="role">
+    <button (click)="addToListRoles(role)"> + </button>
   </div>
-  <div class="role-page__items">
-    <div *ngFor="let role of this.protegeService.listRoles"> 
-      {{role.caption}}
-      <button (click)="removeRoles(role)"> Удалить </button>
+  <div class="role-page__items app-tabs__default-item-box">
+    Доступные роли:
+    <div class="item" *ngFor="let role of this.protegeService.listRoles">
+      <div class="title">{{role.caption}}</div>
+      <button (click)="removeRoles(role)"> - </button>
     </div>
   </div>
 </div>

@@ -1,0 +1,15 @@
+.app-tabs__default-item-box {
+  display: flex;
+  flex-direction: column;
+  div.item {
+    margin: 0.5em 0;
+    display: flex;
+    flex-direction: row;
+  }
+  div.title {
+    width: 100%;
+    flex-wrap: wrap;
+    border: 1px solid black !important;
+  }
+
+}
