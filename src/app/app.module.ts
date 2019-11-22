@@ -13,7 +13,9 @@ import { RelationItemComponent } from './relationships/relation-item/relation-it
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent, TabsComponent, ClassesPageComponent, RolePageComponent, RelationshipsComponent, RelationItemComponent ],
+  declarations: [
+    AppComponent,
+    HelloComponent, TabsComponent, ClassesPageComponent, RolePageComponent, RelationshipsComponent, RelationItemComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ProtegeService]
 })

@@ -30,5 +30,4 @@ export class RelationItemComponent implements OnInit {
     this.relationshipCaption = getElement.byId(
       this.protegeService.relationTypes, this.item.relationship, 'caption');
   }
-
 }

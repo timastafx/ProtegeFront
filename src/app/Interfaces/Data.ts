@@ -29,7 +29,7 @@ export interface IRelationship {
   id: number;
   mainClassId: number;
   secondaryClassId: number;
-  roleId: number,
+  roleId: number;
   relationship: string;
 }
 
@@ -41,10 +41,10 @@ export interface IObject {
   caption: string;
   classesId: number[];
   relationships: {
-    roleId: number,
-    secondaryObject: number
+    roleId: number;
+    secondaryObject: number;
   }[];
-} 
+}
 
 /**
  * Интерфейс полного набора данных
@@ -62,48 +62,48 @@ export interface IData {
 const firstCLass: IClass = {
   id: 142524131,
   caption: 'Мужчина'
-}
+};
 
 const secondCLass: IClass = {
   id: 452412314,
   caption: 'Женщина'
-}
+};
 
 const firstRole: IRole = {
   id: 35234524,
   caption: 'Женат'
-}
+};
 
 const firstRelationship: IRelationship = {
-  id: 34524235,               
-  mainClassId: 142524131,         //firstCLass
-  secondaryClassId: 452412314,    //secondCLass
-  roleId: 35234524,               //firstRole
+  id: 34524235,
+  mainClassId: 142524131,         // firstCLass
+  secondaryClassId: 452412314,    // secondCLass
+  roleId: 35234524,               // firstRole
   relationship: 'Один к одному'
-}
+};
 
 const firstObject: IObject = {
   id: 85434634,
   caption: 'Владимир',
   classesId: [
-    142524131                   //firstCLass.id
+    142524131                   // firstCLass.id
   ],
   relationships: [
     {
-      roleId: 35234524,           //firstRole
-      secondaryObject: 945736347  //secondObject
+      roleId: 35234524,           // firstRole
+      secondaryObject: 945736347  // secondObject
     }
   ]
-}
+};
 
 const secondObject: IObject = {
   id: 945736347,
   caption: 'Екатерина',
   classesId: [
-    452412314                     //secondCLass.id
+    452412314                     // secondCLass.id
   ],
   relationships: []
-}
+};
 
 const data: IData = {
   classes: [
@@ -119,4 +119,5 @@ const data: IData = {
   objects: [
     firstObject
   ]
-}
+};
+
