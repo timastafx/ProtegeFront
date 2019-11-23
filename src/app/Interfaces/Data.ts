@@ -30,13 +30,13 @@ export interface IRelationship {
   mainClassId: number;
   secondaryClassId: number;
   roleId: number;
-  relationship: string;
+  relationship: string | number;
 }
 
 /**
  * Интерфейс объекта
  */
-export interface IObject {
+export interface IEssence {
   id: number;
   caption: string;
   classesId: number[];
@@ -53,7 +53,7 @@ export interface IData {
   classes: IClass[];
   roles: IRole[];
   relationships: IRelationship[];
-  objects: IObject[];
+  objects: IEssence[];
 }
 
 /**
@@ -82,7 +82,7 @@ const firstRelationship: IRelationship = {
   relationship: 'Один к одному'
 };
 
-const firstObject: IObject = {
+const firstObject: IEssence = {
   id: 85434634,
   caption: 'Владимир',
   classesId: [
@@ -96,7 +96,7 @@ const firstObject: IObject = {
   ]
 };
 
-const secondObject: IObject = {
+const secondObject: IEssence = {
   id: 945736347,
   caption: 'Екатерина',
   classesId: [

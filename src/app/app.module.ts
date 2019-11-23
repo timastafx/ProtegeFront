@@ -10,12 +10,14 @@ import { RolePageComponent } from './role-page/role-page.component';
 import { ProtegeService } from './protege.service';
 import { RelationshipsComponent } from './relationships/relationships.component';
 import { RelationItemComponent } from './relationships/relation-item/relation-item.component';
+import { EssencesPageComponent } from './essences-page/essences-page.component';
+import { EssenceComponent } from './essences-page/essence/essence.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
   declarations: [
     AppComponent,
-    HelloComponent, TabsComponent, ClassesPageComponent, RolePageComponent, RelationshipsComponent, RelationItemComponent ],
+    HelloComponent, TabsComponent, ClassesPageComponent, RolePageComponent, RelationshipsComponent, RelationItemComponent, EssencesPageComponent, EssenceComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ProtegeService]
 })

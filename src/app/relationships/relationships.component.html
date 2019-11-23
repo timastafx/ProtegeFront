@@ -27,7 +27,7 @@
         </select></p>
       </label>
 	</div>
-  <div class="app-quantification__name">
+	<div class="app-quantification__name">
 		<label>
         <span>Тип связи</span>
         <p><select [(ngModel)]="relationType">
@@ -38,7 +38,6 @@
       </label>
 	</div>
 </div>
-
 
 <div class="app-relationships__text-block">
 	<span class="app-relationships__text"
@@ -53,5 +52,5 @@
 </div>
 
 <div *ngFor="let item of this.protegeService.relationships">
-  <app-relation-item [item]="item"></app-relation-item>
+	<app-relation-item [item]="item"></app-relation-item>
 </div>

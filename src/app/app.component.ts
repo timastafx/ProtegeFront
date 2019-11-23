@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ProtegeService } from './protege.service';
-import { IData } from './interfaces/Data';
+import { IData } from './Interfaces/Data';
+import { ITabs } from './Interfaces/Tabs;'
 
 @Component({
   selector: 'my-app',
@@ -8,8 +9,22 @@ import { IData } from './interfaces/Data';
   styleUrls: [ './app.component.less' ]
 })
 export class AppComponent  {
-  selected: string = 'Classes';
+  selected: string = 'Essence';
   data: IData;
+  tabs: ITabs[] = [{
+    id: 'Classes',
+    caption: 'Классы'
+  }, {
+    id: 'Role',
+    caption: 'Роли'
+  }, {
+    id: 'Relationships',
+    caption: 'Связи'
+  }, {
+    id: 'Essence',
+    caption: 'Сущности'
+  }];
+  
   constructor (public protegeService: ProtegeService) {}
 
   public tabsChanged(id: string): void {

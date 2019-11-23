@@ -1,11 +1,14 @@
 <div class="root">
   <div class="root__tabs">
-    <app-tabs (tabsChanged)='tabsChanged($event)'></app-tabs>
+    <app-tabs (tabsChanged)='tabsChanged($event)'
+              [tabs]='tabs'
+              [selected]='selected'></app-tabs>
   </div>
   <div class="root__pages">
     <app-classes-page *ngIf='selected === "Classes"'> </app-classes-page>
     <app-role-page *ngIf='selected === "Role"'></app-role-page>
     <app-relationships *ngIf='selected === "Relationships"'></app-relationships>
+    <app-essences-page *ngIf='selected === "Essence"'></app-essences-page>
   </div>
   <div class="root__button">
     <button style="width: 100%"

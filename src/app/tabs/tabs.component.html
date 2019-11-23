@@ -1,17 +1,8 @@
 <div class="tabs">
-	<div class="tabs__button" 
-       (click)="onClickHandler('Classes')"
-		   [ngClass]="{'tabs__item-active': checkedId === 'Classes'}">
-		Классы
-	</div>
-	<div class="tabs__button" 
-       (click)="onClickHandler('Role')" 
-       [ngClass]="{'tabs__item-active': checkedId === 'Role'}">
-		Роли
-	</div>
-	<div class="tabs__button" 
-       (click)="onClickHandler('Relationships')"
-		   [ngClass]="{'tabs__item-active': checkedId === 'Relationships'}">
-		Связи
-	</div>
+  <div *ngFor="let tab of tabs"
+       class="tabs__button"
+       (click)="onClickHandler(tab.id)"
+       [ngClass]="{'tabs__item-active': checkedId === tab.id}">
+    {{ tab.caption }}
+  </div>
 </div>
