@@ -23,4 +23,7 @@
        (click)="addButtonClickHundler(classId, caption)">
     Добавить
   </div>
+  <div *ngFor="let item of this.protegeService.essence">
+    <app-essence [item]="item"></app-essence>
+  </div>
 </div>

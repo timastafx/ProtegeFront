@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProtegeService } from '../protege.service';
-import { IRelationship } from '../Interfaces/Data';
+import { IRelationship, IRelationshipType, relationTypes } from '../Interfaces/Data';
 
 interface IAddedOptions {
   mainClass: number;
@@ -20,6 +20,7 @@ export class RelationshipsComponent implements OnInit {
   secondClass: number = null;
   role: number = null;
   relationType: string = null;
+  relationshipTypes: IRelationshipType[] = relationTypes;
 
   constructor (public protegeService: ProtegeService) {}
 

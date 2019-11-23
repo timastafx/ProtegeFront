@@ -30,7 +30,7 @@ export interface IRelationship {
   mainClassId: number;
   secondaryClassId: number;
   roleId: number;
-  relationship: string | number;
+  relationship: number;
 }
 
 /**
@@ -79,7 +79,7 @@ const firstRelationship: IRelationship = {
   mainClassId: 142524131,         // firstCLass
   secondaryClassId: 452412314,    // secondCLass
   roleId: 35234524,               // firstRole
-  relationship: 'Один к одному'
+  relationship: 1                 // Один к одному
 };
 
 const firstObject: IEssence = {
@@ -121,3 +121,16 @@ const data: IData = {
   ]
 };
 
+export const relationTypes: IRelationshipType[] = [{
+    id: 1,
+    caption: 'Один к одному'
+  }, {
+    id: 2,
+    caption: 'Один ко многим'
+  }, {
+    id: 3,
+    caption: 'Много к одному'
+  }, {
+    id: 4,
+    caption: 'Много ко многим'
+  }]

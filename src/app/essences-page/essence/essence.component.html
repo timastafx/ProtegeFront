@@ -1,0 +1,9 @@
+<div class="essence">
+  <!-- Наименование -->
+  {{ item.caption }}
+  <!-- Класс -->
+  <div *ngFor="let classId of item.classesId"
+       class="essence__class">
+    <app-essence-class-view [classId]="classId"></app-essence-class-view>
+  </div>
+</div>

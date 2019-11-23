@@ -32,7 +32,7 @@
         <span>Тип связи</span>
         <p><select [(ngModel)]="relationType">
           <option disabled>Выберите тип связи</option>
-          <option *ngFor="let type of this.protegeService.relationTypes" [value]='type.id'> 
+          <option *ngFor="let type of relationshipTypes" [value]='type.id'> 
             {{type.caption}}</option>
         </select></p>
       </label>

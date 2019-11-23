@@ -24,24 +24,26 @@ export class ProtegeService {
     roleId: 1,               // firstRole
     relationship: 1
   }];
-  essence: IEssence[] = [];
+  essence: IEssence[] = [{
+    id: 85434634,
+    caption: 'Владимир',
+    classesId: [
+      1                   // firstCLass.id
+    ],
+    relationships: [
+      {
+        roleId: 1,           // firstRole
+        secondaryObject: 945736347  // secondObject
+      }
+    ]
+  }, {
+    id: 8543462334,
+    caption: 'Екатерина',
+    classesId: [
+      2                   // firstCLass.id
+    ],
+    relationships: []
+  }];
 
-  /**
-   * Константа
-   */
-  relationTypes: IRelationshipType[] = [{
-    id: 1,
-    caption: 'Один к одному'
-  }, {
-    id: 2,
-    caption: 'Один ко многим'
-  }, {
-    id: 3,
-    caption: 'Много к одному'
-  }, {
-    id: 4,
-    caption: 'Много ко многим'
-  }]
-  
   constructor() { }
 }

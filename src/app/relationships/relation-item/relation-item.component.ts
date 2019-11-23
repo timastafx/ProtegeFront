@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IRelationship } from '../../Interfaces/Data';
+import { IRelationship, relationTypes } from '../../Interfaces/Data';
 import { ProtegeService } from '../../protege.service';
 import { getElement } from '../../helpers/getElement';
 
@@ -28,6 +28,6 @@ export class RelationItemComponent implements OnInit {
       this.protegeService.listRoles, this.item.roleId, 'caption');
 
     this.relationshipCaption = getElement.byId(
-      this.protegeService.relationTypes, this.item.relationship, 'caption');
+      relationTypes, this.item.relationship, 'caption');
   }
 }
