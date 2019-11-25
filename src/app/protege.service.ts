@@ -25,7 +25,7 @@ export class ProtegeService {
     relationship: 1
   }];
   essence: IEssence[] = [{
-    id: 85434634,
+    id: 15434634,
     caption: 'Владимир',
     classesId: [
       1                   // firstCLass.id
@@ -33,7 +33,7 @@ export class ProtegeService {
     relationships: [
       {
         roleId: 1,           // firstRole
-        secondaryObject: 945736347  // secondObject
+        secondaryObject: 8543462334  // Екатерина
       }
     ]
   }, {
