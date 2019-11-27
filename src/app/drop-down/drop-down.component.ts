@@ -11,8 +11,10 @@ export class DropDownComponent implements OnInit {
     id: number;
     caption: string;
   };
+  @Input() caption: string;
   @Output() itemChanged = new EventEmitter();
 
+  addToggle: boolean = false;
   itemId: number;
   constructor() { }
 
@@ -21,11 +23,10 @@ export class DropDownComponent implements OnInit {
 
   addButtonClick(): void {
     if (this.itemId || this.itemId === 0) {
-      console.log(getElement.byId(this.list, this.itemId));
-
       this.itemChanged.emit(getElement.byId(this.list, this.itemId));
     } else {
       alert('Нужно выбрать класс')
     }
+    this.addToggle = false;
   }
 }

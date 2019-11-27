@@ -13,14 +13,9 @@
         <app-essence-class-view [classId]="classId"></app-essence-class-view>
       
       </div>
-      <app-drop-down *ngIf="addToggle"
-                     [list]="this.protegeService.listClasses"
+      <app-drop-down [list]="this.protegeService.listClasses"
+                     [caption]="'Еще'"
                      (itemChanged)="classChanged($event)"></app-drop-down>   
-      <div *ngIf="!addToggle"
-           class="essence__add-button"
-           (click)="addClassClick()">
-        Еще
-      </div>
     </div>
 
     <div class="essence__relation-block">

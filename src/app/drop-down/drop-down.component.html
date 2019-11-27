@@ -1,16 +1,21 @@
-<div style="display: flex; align-items: center; height: 30px">
-  <p><select [(ngModel)]="itemId">
-    <option disabled>Выберите класс</option>
-    <option *ngFor="let item of list" 
-            [value]='item.id'> 
-      {{item.caption}}
-    </option>
-  </select></p>
-  <p (click)="addButtonClick()"
-      style="margin-left: 5px;
-            color: blue;
-            font-size: 1.5em;
-            cursor: pointer">
-    +
-  </p>
+<div>
+  <div  *ngIf="addToggle" style="display: flex; align-items: center; height: 30px">
+    <p><select [(ngModel)]="itemId">
+      <option disabled>Выберите класс</option>
+      <option *ngFor="let item of list" 
+              [value]='item.id'> 
+        {{item.caption}}
+      </option>
+    </select></p>
+    <p (click)="addButtonClick()"
+        style="margin-left: 5px;
+              color: blue;
+              font-size: 1.5em;
+              cursor: pointer">
+      +
+    </p>
+  </div>
+  <div  *ngIf="!addToggle" class="drop-down__add-button" (click)="addToggle = !addToggle"> 
+      {{this.caption}}
+  </div>
 </div>
