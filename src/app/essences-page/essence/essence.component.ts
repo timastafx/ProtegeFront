@@ -10,14 +10,19 @@ import { ProtegeService } from '../../protege.service';
 })
 export class EssenceComponent implements OnInit {
   @Input() item: IEssence;
+  addToggle: boolean = false;
 
   constructor(public protegeService: ProtegeService) { }
 
   ngOnInit() {
   }
 
-  getClass(id: number): string {
-    return getElement.byId(
-      this.protegeService.listClasses, this.item.mainClassId, 'caption');
+  addClassClick() {
+    this.addToggle = true;
+  }
+
+  classChanged(classItem): void {
+    this.item.classesId.push(classItem.id);
+    this.addToggle = false;
   }
 }

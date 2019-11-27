@@ -5,7 +5,7 @@ import { ProtegeService } from '../../../protege.service';
 @Component({
   selector: 'app-essence-class-view',
   templateUrl: './essence-class-view.component.html',
-  styleUrls: ['./essence-class-view.component.css']
+  styleUrls: ['./essence-class-view.component.less']
 })
 export class EssenceClassViewComponent implements OnInit {
   classes: string = '';

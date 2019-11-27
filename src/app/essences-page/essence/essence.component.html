@@ -1,9 +1,34 @@
 <div class="essence">
   <!-- Наименование -->
-  {{ item.caption }}
-  <!-- Класс -->
-  <div *ngFor="let classId of item.classesId"
-       class="essence__class">
-    <app-essence-class-view [classId]="classId"></app-essence-class-view>
+  <div class="essence__top"> 
+    {{ item.caption }}
   </div>
+  
+  <div class="essence__content"> 
+    <!-- Класс -->
+    <div class="essence__class-block">
+      <p>Класс</p>
+      <div *ngFor="let classId of item.classesId"
+          class="essence__class">
+        <app-essence-class-view [classId]="classId"></app-essence-class-view>
+      
+      </div>
+      <app-drop-down *ngIf="addToggle"
+                     [list]="this.protegeService.listClasses"
+                     (itemChanged)="classChanged($event)"></app-drop-down>   
+      <div *ngIf="!addToggle"
+           class="essence__add-button"
+           (click)="addClassClick()">
+        Еще
+      </div>
+    </div>
+
+    <div class="essence__relation-block">
+      <p>Связи</p>
+      <div class="essence__add-button">
+        Добавить
+      </div>
+    </div>
+  </div>
+  
 </div>

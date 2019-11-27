@@ -13,12 +13,13 @@ import { RelationItemComponent } from './relationships/relation-item/relation-it
 import { EssencesPageComponent } from './essences-page/essences-page.component';
 import { EssenceComponent } from './essences-page/essence/essence.component';
 import { EssenceClassViewComponent } from './essences-page/essence/essence-class-view/essence-class-view.component';
+import { DropDownComponent } from './drop-down/drop-down.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
   declarations: [
     AppComponent,
-    HelloComponent, TabsComponent, ClassesPageComponent, RolePageComponent, RelationshipsComponent, RelationItemComponent, EssencesPageComponent, EssenceComponent, EssenceClassViewComponent ],
+    HelloComponent, TabsComponent, ClassesPageComponent, RolePageComponent, RelationshipsComponent, RelationItemComponent, EssencesPageComponent, EssenceComponent, EssenceClassViewComponent, DropDownComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ProtegeService]
 })
