@@ -1,0 +1,12 @@
+<div>
+  <app-drop-down [caption]="essenceCaption"
+                 [list]="protegeService.essence"
+                 (itemChanged)="essenceChange($event)">
+  </app-drop-down>
+  <app-drop-down [caption]="roleCaption"
+                 [list]="protegeService.listRoles"
+                 (itemChanged)="roleChange($event)">
+  </app-drop-down>
+
+  <button (click)="relationAdd()">Добавить</button>
+</div>

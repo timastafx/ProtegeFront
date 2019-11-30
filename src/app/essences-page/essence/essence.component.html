@@ -11,18 +11,12 @@
       <div *ngFor="let classId of item.classesId"
           class="essence__class">
         <app-essence-class-view [classId]="classId"></app-essence-class-view>
-      
-      </div>
-      <app-drop-down [list]="this.protegeService.listClasses"
-                     [caption]="'Еще'"
-                     (itemChanged)="classChanged($event)"></app-drop-down>   
+      </div>  
     </div>
 
     <div class="essence__relation-block">
       <p>Связи</p>
-      <div class="essence__add-button">
-        Добавить
-      </div>
+      <app-relation-adder (itemChanged)="relationChanged($event)"></app-relation-adder>
     </div>
   </div>
   

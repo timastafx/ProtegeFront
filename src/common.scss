@@ -13,3 +13,13 @@
   }
 
 }
+
+.add-button {
+    color: cornflowerblue;
+    cursor: pointer;
+    display: inline;
+
+    &:hover {
+      color: darkblue;
+    }
+}
