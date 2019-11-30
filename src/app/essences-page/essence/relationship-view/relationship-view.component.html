@@ -1,18 +1,22 @@
 <div class='relationship-view'>
   <div class="relationship-view__caption">
-    <div>
+    <div class="relationship-view__text">
       Вступает в связь
     </div>  
-    <div>
+    <div class="relationship-view__text">
       С сущностью
     </div> 
   </div>
   <div class="relationship-view__result">
-    <div>
-      {{ relationship.roleId }}
+    <div class="relationship-view__text">
+      {{ role.caption }}
     </div>
-    <div>
-      {{ relationship.secondaryObjectId }}
+    <div class="relationship-view__text">
+      {{ relation.caption }}
+    </div>
+    <div class="relationship-view__text add-button"
+         (click)="deleteRelation()">
+      Удалить
     </div>
   </div>
 </div>

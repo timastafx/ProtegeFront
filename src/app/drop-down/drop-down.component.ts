@@ -25,7 +25,7 @@ export class DropDownComponent implements OnInit {
     if (this.itemId || this.itemId === 0) {
       this.itemChanged.emit(getElement.byId(this.list, this.itemId));
     } else {
-      alert('Нужно выбрать класс')
+      alert('Нужно выбрать запись!')
     }
     this.addToggle = false;
   }
