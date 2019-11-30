@@ -29,6 +29,6 @@ export class EssenceComponent implements OnInit {
   }
 
   relationChanged(item: IRelation): void {
-
+    console.log(item);
   }
 }

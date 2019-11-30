@@ -12,6 +12,7 @@ export class RelationAdderComponent implements OnInit {
   role: IRole;
   essenceCaption: string = 'Сущность';
   roleCaption: string = 'Роль';
+  adderToggle: boolean = false;
 
   @Output() itemChanged = new EventEmitter();
   constructor(public protegeService: ProtegeService) { }
@@ -34,5 +35,6 @@ export class RelationAdderComponent implements OnInit {
       role: this.role,
       essence: this.essence
     });
+    this.adderToggle = false;
   }
 }
