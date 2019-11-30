@@ -29,6 +29,9 @@ export class EssenceComponent implements OnInit {
   }
 
   relationChanged(item: IRelation): void {
-    console.log(item);
+    this.item.relationships.push({
+      roleId: item.role.id,
+      secondaryObjectId: item.essence.id
+    });
   }
 }

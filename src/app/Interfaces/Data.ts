@@ -42,7 +42,7 @@ export interface IEssence {
   classesId: number[];
   relationships: {
     roleId: number;
-    secondaryObject: number;
+    secondaryObjectId: number;
   }[];
 }
 
@@ -91,7 +91,7 @@ const firstObject: IEssence = {
   relationships: [
     {
       roleId: 35234524,           // firstRole
-      secondaryObject: 945736347  // secondObject
+      secondaryObjectId: 945736347  // secondObject
     }
   ]
 };

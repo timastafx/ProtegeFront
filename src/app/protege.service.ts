@@ -33,7 +33,7 @@ export class ProtegeService {
     relationships: [
       {
         roleId: 1,           // firstRole
-        secondaryObject: 8543462334  // Екатерина
+        secondaryObjectId: 8543462334  // Екатерина
       }
     ]
   }, {

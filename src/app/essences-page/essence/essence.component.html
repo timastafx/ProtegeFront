@@ -16,6 +16,10 @@
 
     <div class="essence__relation-block">
       <p>Связи</p>
+      <div *ngFor="let relationship of item.relationships">
+        <app-relationship-view [relationship]="relationship">
+        </app-relationship-view>
+      </div>
       <app-relation-adder (itemChanged)="relationChanged($event)"></app-relation-adder>
     </div>
   </div>

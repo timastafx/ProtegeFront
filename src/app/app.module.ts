@@ -14,11 +14,12 @@ import { EssenceComponent } from './essences-page/essence/essence.component';
 import { EssenceClassViewComponent } from './essences-page/essence/essence-class-view/essence-class-view.component';
 import { DropDownComponent } from './drop-down/drop-down.component';
 import { RelationAdderComponent } from './essences-page/essence/relation-adder/relation-adder.component';
+import { RelationshipViewComponent } from './essences-page/essence/relationship-view/relationship-view.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
   declarations: [
-    AppComponent, TabsComponent, ClassesPageComponent, RolePageComponent, RelationshipsComponent, RelationItemComponent, EssencesPageComponent, EssenceComponent, EssenceClassViewComponent, DropDownComponent, RelationAdderComponent ],
+    AppComponent, TabsComponent, ClassesPageComponent, RolePageComponent, RelationshipsComponent, RelationItemComponent, EssencesPageComponent, EssenceComponent, EssenceClassViewComponent, DropDownComponent, RelationAdderComponent, RelationshipViewComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ProtegeService]
 })
