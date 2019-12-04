@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { ClassesPageComponent } from './classes-page/classes-page.component';
 import { RolePageComponent } from './role-page/role-page.component';
-import { ProtegeService } from './protege.service';
+import { ProtegeService } from 'src/app/protege.service';
 import { RelationshipsComponent } from './relationships/relationships.component';
 import { RelationItemComponent } from './relationships/relation-item/relation-item.component';
 import { EssencesPageComponent } from './essences-page/essences-page.component';
@@ -19,7 +19,19 @@ import { RelationshipViewComponent } from './essences-page/essence/relationship-
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
   declarations: [
-    AppComponent, TabsComponent, ClassesPageComponent, RolePageComponent, RelationshipsComponent, RelationItemComponent, EssencesPageComponent, EssenceComponent, EssenceClassViewComponent, DropDownComponent, RelationAdderComponent, RelationshipViewComponent ],
+    AppComponent,
+    TabsComponent,
+    ClassesPageComponent,
+    RolePageComponent,
+    RelationshipsComponent,
+    RelationItemComponent,
+    EssencesPageComponent,
+    EssenceComponent,
+    EssenceClassViewComponent,
+    DropDownComponent,
+    RelationAdderComponent,
+    RelationshipViewComponent
+  ],
   bootstrap:    [ AppComponent ],
   providers: [ProtegeService]
 })

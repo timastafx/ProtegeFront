@@ -7,6 +7,11 @@ import { ITabs } from '../Interfaces/Tabs';
   styleUrls: ['./tabs.component.less']
 })
 
+/**
+ * @class TabsComponent
+ * @description Компонент "Вкладки/Табы"
+ * @author Shepel Andrey
+ */
 export class TabsComponent implements OnInit {
   checkedId: number | string;
 
@@ -20,7 +25,12 @@ export class TabsComponent implements OnInit {
     this.checkedId = this.selected;
   }
 
-  onClickHandler(id: string) {
+  /**
+   * @method
+   * @description Обработка события переключени таба
+   * @param id Идентификатор выбранного таба
+   */
+  onClickHandler(id: number | string) {
     this.checkedId = id;
     this.tabsChanged.emit(this.checkedId);
   }

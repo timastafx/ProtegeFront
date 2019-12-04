@@ -2,7 +2,13 @@
  * Интерфейс сласса
  */
 export interface IClass {
+  /**
+   * Уникальный идентификатор
+   */
   id: number;
+  /**
+   * Название класса
+   */
   caption: string;
 }
 
@@ -10,7 +16,13 @@ export interface IClass {
  * Интерфейс роли
  */
 export interface IRole {
+  /**
+   * Уникальный идентификатор
+   */
   id: number;
+  /**
+   * Название роли
+   */
   caption: string;
 }
 
@@ -18,7 +30,13 @@ export interface IRole {
  * Интерфейс типа отношений
  */
 export interface IRelationshipType {
+  /**
+   * Уникальный идентификатор
+   */
   id: number;
+  /**
+   * Название типа отношений
+   */
   caption: string;
 }
 
@@ -26,33 +44,83 @@ export interface IRelationshipType {
  * Интерфейс отношения между классами
  */
 export interface IRelationship {
+  /**
+   * Уникальный идентификатор
+   */
   id: number;
+  /**
+   * Идентификатор класса субъекта (Кто совершает действие)
+   */
   mainClassId: number;
+  /**
+   * Идентификатор класса объекта (На кого направленно действие)
+   */
   secondaryClassId: number;
+  /**
+   * Идентификатор роли
+   */
   roleId: number;
+  /**
+   * Идентификатор типа отношений, задается в константе relationTypes
+   */
   relationship: number;
 }
 
 /**
- * Интерфейс объекта
+ * Интерфейс отношения в объекте сущности
+ */
+export interface IRelationshipEssence {
+  /**
+   * Идентификатор роли
+   */
+  roleId: number;
+  /**
+   * Идентификатор сущности субъекта - на оторую направлено действие
+   */
+  secondaryObjectId: number;
+}
+
+/**
+ * Интерфейс сущности
  */
 export interface IEssence {
+  /**
+   * Уникальный идентификатор
+   */
   id: number;
+  /**
+   * Наименование сущности
+   */
   caption: string;
-  classesId: number[];
-  relationships: {
-    roleId: number;
-    secondaryObjectId: number;
-  }[];
+  /**
+   * Идентификатор класса, к которому принадлежит сущность
+   */
+  classesId: number;
+  /**
+   * Массив записей имеющихся отношений
+   */
+  relationships: IRelationshipEssence[];
 }
 
 /**
  * Интерфейс полного набора данных
  */
 export interface IData {
+  /**
+   * Массив классов
+   */
   classes: IClass[];
+  /**
+   * Массив ролей
+   */
   roles: IRole[];
+  /**
+   * Массив возможных отношений
+   */
   relationships: IRelationship[];
+  /**
+   * Массив сущностей
+   */
   objects: IEssence[];
 }
 
@@ -85,9 +153,7 @@ const firstRelationship: IRelationship = {
 const firstObject: IEssence = {
   id: 85434634,
   caption: 'Владимир',
-  classesId: [
-    142524131                   // firstCLass.id
-  ],
+  classesId: 142524131,                   // firstCLass.id
   relationships: [
     {
       roleId: 35234524,           // firstRole
@@ -99,13 +165,11 @@ const firstObject: IEssence = {
 const secondObject: IEssence = {
   id: 945736347,
   caption: 'Екатерина',
-  classesId: [
-    452412314                     // secondCLass.id
-  ],
+  classesId: 452412314,                     // secondCLass.id
   relationships: []
 };
 
-const data: IData = {
+export const data: IData = {
   classes: [
     firstCLass,
     secondCLass
@@ -117,7 +181,8 @@ const data: IData = {
     firstRelationship
   ],
   objects: [
-    firstObject
+    firstObject,
+    secondObject
   ]
 };
 
@@ -133,4 +198,4 @@ export const relationTypes: IRelationshipType[] = [{
   }, {
     id: 4,
     caption: 'Много ко многим'
-  }]
+  }];

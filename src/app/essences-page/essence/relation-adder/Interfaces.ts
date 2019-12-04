@@ -1,4 +1,4 @@
-import { IEssence, IRole } from '../../../Interfaces/Data';
+import { IEssence, IRole } from 'src/app/Interfaces/Data';
 
 export interface IRelation {
   role: IRole;

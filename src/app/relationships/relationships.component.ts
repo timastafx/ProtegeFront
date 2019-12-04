@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ProtegeService } from '../protege.service';
-import { IRelationship, IRelationshipType, relationTypes } from '../Interfaces/Data';
+import { ProtegeService } from 'src/app/protege.service';
+import { IRelationshipType, relationTypes } from '../Interfaces/Data';
 
 interface IAddedOptions {
   mainClass: number;
   secondClass: number;
   role: number;
-  relationType: string;
+  relationType: string | any;
 }
 
 @Component({
@@ -14,8 +14,13 @@ interface IAddedOptions {
   templateUrl: './relationships.component.html',
   styleUrls: ['./relationships.component.less']
 })
+
+/**
+ * @class RelationshipsComponent
+ * @description Страница добовления отношений
+ * @author Shepel Andrey
+ */
 export class RelationshipsComponent implements OnInit {
-  items: IRelationship[] = [];
   mainClass: number = null;
   secondClass: number = null;
   role: number = null;
@@ -27,8 +32,9 @@ export class RelationshipsComponent implements OnInit {
   ngOnInit() {
   }
 
-   /* @event
-   * Обработка добавления элемента
+  /**
+   * Обработка клика по кнопке добавления связи
+   * @param options Объект опций, реализующий интерфейс IAddedOptions
    */
   public onAddClick(options: IAddedOptions): void {
     this.protegeService.relationships.push({
@@ -43,20 +49,13 @@ export class RelationshipsComponent implements OnInit {
   }
 
   /**
-   * @private
-   * Обнулить значение селекторов
+   * @method
+   * @description Обнулить значение селекторов
    */
   private zeroize(): void {
     this.mainClass = null;
     this.secondClass = null;
     this.role = null;
     this.relationType = null;
-  }
-
-  /* @event
-   * Обработка клика по крестику
-   */
-  public onDeleteClick(element): void {
-    this.items = this.items.filter(item => item.id !== element.id);
   }
 }

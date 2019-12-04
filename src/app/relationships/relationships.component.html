@@ -1,56 +1,58 @@
-<div class="app-relationships">
-	<div class="app-quantification__name">
-		<label>
-      <span>Субъект</span>
-      <p><select [(ngModel)]="mainClass">
-        <option disabled>Выберите субъект</option>
-        <option *ngFor="let mainClass of this.protegeService.listClasses" 
-                [value]='mainClass.id'> {{mainClass.caption}}</option>
-      </select></p>
-    </label>
-	</div>
-	<div class="app-quantification__value">
-		<label>
-      <span>Роль</span>
-      <p><select [(ngModel)]="role">
-        <option disabled>Выберите Роль</option>
-        <option *ngFor="let role of this.protegeService.listRoles" [value]='role.id'> {{role.caption}}</option>
-      </select></p>
-    </label>
-	</div>
-	<div class="app-quantification__name">
-		<label>
+<div>
+  <div class="app-relationships">
+    <div class="app-quantification__name">
+      <label>
+        <span>Субъект</span>
+          <select [(ngModel)]="mainClass">
+            <option disabled>Выберите субъект</option>
+            <option *ngFor="let mainClass of this.protegeService.listClasses"
+                    [value]='mainClass.id'> {{mainClass.caption}}</option>
+          </select>
+      </label>
+    </div>
+    <div class="app-quantification__value">
+      <label>
+        <span>Роль</span>
+        <select [(ngModel)]="role">
+          <option disabled>Выберите Роль</option>
+          <option *ngFor="let role of this.protegeService.listRoles" [value]='role.id'> {{role.caption}}</option>
+        </select>
+      </label>
+    </div>
+    <div class="app-quantification__name">
+      <label>
         <span>Объект</span>
-        <p><select [(ngModel)]="secondClass">
+        <select [(ngModel)]="secondClass">
           <option disabled>Выберите объект</option>
           <option *ngFor="let mainClass of this.protegeService.listClasses" [value]='mainClass.id'> {{mainClass.caption}}</option>
-        </select></p>
+        </select>
       </label>
-	</div>
-	<div class="app-quantification__name">
-		<label>
+    </div>
+    <div class="app-quantification__name">
+      <label>
         <span>Тип связи</span>
-        <p><select [(ngModel)]="relationType">
+        <select [(ngModel)]="relationType">
           <option disabled>Выберите тип связи</option>
-          <option *ngFor="let type of relationshipTypes" [value]='type.id'> 
+          <option *ngFor="let type of relationshipTypes" [value]='type.id'>
             {{type.caption}}</option>
-        </select></p>
+        </select>
       </label>
-	</div>
-</div>
+    </div>
+  </div>
 
-<div class="app-relationships__text-block">
-	<span class="app-relationships__text"
-        (click)="onAddClick({
-            mainClass: mainClass,
-            secondClass: secondClass,
-            role: role,
-            relationType: relationType
-        })">
-      Добавить связь
-    </span>
-</div>
+  <div class="app-relationships__text-block">
+    <span class="app-relationships__text"
+          (click)="onAddClick({
+              mainClass: mainClass,
+              secondClass: secondClass,
+              role: role,
+              relationType: relationType
+          })">
+        Добавить связь
+      </span>
+  </div>
 
-<div *ngFor="let item of this.protegeService.relationships">
-	<app-relation-item [item]="item"></app-relation-item>
+  <div *ngFor="let item of this.protegeService.relationships">
+    <app-relation-item [item]="item"></app-relation-item>
+  </div>
 </div>

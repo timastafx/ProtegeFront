@@ -1,52 +1,71 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { IRelationship, IRole } from '../../../Interfaces/Data';
-import { getElement } from '../../../helpers/getElement';
-import { ProtegeService } from '../../../protege.service';
-import { IRelation } from '../relation-adder/Interfaces';
+import { IEssence, IRelationshipEssence, IRole} from 'src/app/Interfaces/Data';
+import { GetElement } from 'src/app/helpers/getElement';
+import { ProtegeService } from 'src/app/protege.service';
 
 @Component({
   selector: 'app-relationship-view',
   templateUrl: './relationship-view.component.html',
   styleUrls: ['./relationship-view.component.less']
 })
+
+/**
+ * @class RelationshipViewComponent
+ * @description Компонент отображения звязей у сущностей
+ * @author Shepel Andrey
+ */
 export class RelationshipViewComponent implements OnInit {
-  @Input() relationship: IRelation;
-  @Output() deleteItem = new EventEmitter()
+  @Input() relationship: IRelationshipEssence;
+  @Output() deleteItem = new EventEmitter();
   role: IRole;
-  relation: IRelationship;
+  relationObject: IEssence;
 
   constructor(public protegeService: ProtegeService) { }
 
   ngOnInit() {
     console.log(this.relationship);
     this.role = this.getRole();
-    this.relation = this.getRelation();
-    console.log(this.role, this.relation);
+    this.relationObject = this.getRelation();
+    console.log(this.role, this.relationObject);
   }
 
+  /**
+   * @mathod
+   * @description Получение объекта используемой роли
+   */
   private getRole(): IRole {
     if (this.relationship.roleId || this.relationship.roleId === 0) {
-      return getElement.byId(this.protegeService.listRoles, this.relationship.roleId);
+      return GetElement.byId(this.protegeService.listRoles, this.relationship.roleId);
     } else {
       return {
         id: -1,
         caption: ''
-      }
+      };
     }
   }
 
-  private getRelation(): IRelation {
+  /**
+   * @method
+   * @description Получение объекта сущности, на которую направлено действие
+   */
+  private getRelation(): IEssence {
     if (this.relationship.secondaryObjectId || this.relationship.secondaryObjectId === 0) {
-      return getElement.byId(this.protegeService.essence, this.relationship.secondaryObjectId);
+      return GetElement.byId(this.protegeService.essence, this.relationship.secondaryObjectId);
     } else {
       return {
         id: -1,
-        caption: ''
-      }
+        caption: '',
+        classesId: -1,
+        relationships: []
+      };
     }
   }
 
+  /**
+   * @method
+   * @description Обработка события удаления записи
+   */
   deleteRelation(): void {
-    console.log(this.relation);
+    console.log(this.relationObject);
   }
 }

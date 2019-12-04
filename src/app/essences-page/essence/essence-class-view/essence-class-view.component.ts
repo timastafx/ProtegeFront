@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { getElement } from '../../../helpers/getElement';
-import { ProtegeService } from '../../../protege.service';
+import { GetElement } from 'src/app/helpers/getElement';
+import { ProtegeService } from 'src/app/protege.service';
 
 @Component({
   selector: 'app-essence-class-view',
@@ -8,13 +8,13 @@ import { ProtegeService } from '../../../protege.service';
   styleUrls: ['./essence-class-view.component.less']
 })
 export class EssenceClassViewComponent implements OnInit {
-  classes: string = '';
+  classes = '';
   @Input() classId: number;
 
   constructor(public protegeService: ProtegeService) { }
 
   ngOnInit() {
-    this.classes = getElement.byId(
+    this.classes = GetElement.byId(
       this.protegeService.listClasses, this.classId, 'caption');
   }
 }

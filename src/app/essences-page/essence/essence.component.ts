@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IEssence } from '../../Interfaces/Data';
-import { getElement } from '../../helpers/getElement';
-import { ProtegeService } from '../../protege.service';
+import { IEssence } from 'src/app/Interfaces/Data';
+import { ProtegeService } from 'src/app/protege.service';
 import { IRelation } from './relation-adder/Interfaces';
 
 @Component({
@@ -10,26 +9,25 @@ import { IRelation } from './relation-adder/Interfaces';
   styleUrls: ['./essence.component.less']
 })
 
+/**
+ * @class EssenceComponent
+ * @description Компонент отображения сущности
+ * @author Shepel Andrey
+ */
 export class EssenceComponent implements OnInit {
   @Input() item: IEssence;
-  addToggle: boolean = false;
 
   constructor(public protegeService: ProtegeService) { }
 
   ngOnInit() {
   }
 
-  addClassClick() {
-    this.addToggle = true;
-  }
-
-  classChanged(classItem): void {
-    this.item.classesId.push(classItem.id);
-    this.addToggle = false;
-  }
-
+  /**
+   * @method
+   * @description обработка добавления нового объекта отношения
+   * @param item Добовляемый объект
+   */
   relationChanged(item: IRelation): void {
-    // console.log(item);
     this.item.relationships.push({
       roleId: item.role.id,
       secondaryObjectId: item.essence.id

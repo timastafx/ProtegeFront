@@ -1,20 +1,21 @@
 <div class="essence">
   <!-- Наименование -->
-  <div class="essence__top"> 
+  <div class="essence__top">
     {{ item.caption }}
   </div>
-  
-  <div class="essence__content"> 
+
+  <div class="essence__content">
     <!-- Класс -->
     <div class="essence__class-block">
       <p>Класс</p>
-      <div *ngFor="let classId of item.classesId"
-          class="essence__class">
-        <app-essence-class-view [classId]="classId"></app-essence-class-view>
-      </div>  
+      <div class="essence__class">
+<!--        TODO: Удалить компонент class-view-->
+        <app-essence-class-view [classId]="item.classesId"></app-essence-class-view>
+      </div>
     </div>
 
     <div class="essence__relation-block">
+    <!-- Связи -->
       <p>Связи</p>
       <div *ngFor="let relationship of item.relationships">
         <app-relationship-view [relationship]="relationship">
@@ -24,5 +25,5 @@
       <app-relation-adder (itemChanged)="relationChanged($event)"></app-relation-adder>
     </div>
   </div>
-  
+
 </div>

@@ -1,26 +1,26 @@
 <div class="essences-page">
   <div class="essences-page__added-block">
     <div class="essences-page__caption">
-      <span class="essences-page__caption__span">Наименование</span>
-      <div class="essences-page__caption__input">
-        <input [(ngModel)]="caption">
-      </div>
+      <label>
+        <span class="essences-page__caption__span">Наименование</span>
+        <input [(ngModel)]="caption" class="essences-page__caption__input">
+      </label>
     </div>
     <div class="essences-page__class">
-      <span>Класс</span>
-      <div class="essences-page__class__input">
-        <p><select [(ngModel)]="classId">
+      <label>
+        <span>Класс</span>
+        <select [(ngModel)]="classId" class="essences-page__class__input">
           <option disabled>Выберите субъект</option>
-          <option *ngFor="let mainClass of this.protegeService.listClasses" 
-                  [value]='mainClass.id'> 
+          <option *ngFor="let mainClass of this.protegeService.listClasses"
+                  [value]='mainClass.id'>
             {{mainClass.caption}}
           </option>
-        </select></p>
-      </div>
+        </select>
+      </label>
     </div>
-  </div> 
+  </div>
   <div class="essences-page__add-button"
-       (click)="addButtonClickHundler(classId, caption)">
+       (click)="addButtonClickHandler(classId, caption)">
     Добавить
   </div>
   <div *ngFor="let item of this.protegeService.essence">

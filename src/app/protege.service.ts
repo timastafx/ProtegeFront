@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IRelationship, IRelationshipType, IClass, IRole, IEssence }  from './Interfaces/Data';
+import { IRelationship, IClass, IRole, IEssence } from './Interfaces/Data';
 
 @Injectable()
 export class ProtegeService {
@@ -27,9 +27,7 @@ export class ProtegeService {
   essence: IEssence[] = [{
     id: 15434634,
     caption: 'Владимир',
-    classesId: [
-      1                   // firstCLass.id
-    ],
+    classesId: 1,                   // firstCLass.id
     relationships: [
       {
         roleId: 1,           // firstRole
@@ -39,9 +37,7 @@ export class ProtegeService {
   }, {
     id: 8543462334,
     caption: 'Екатерина',
-    classesId: [
-      2                   // firstCLass.id
-    ],
+    classesId: 2,                   // firstCLass.id
     relationships: []
   }];
 

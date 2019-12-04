@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { ProtegeService } from '../../../protege.service';
-import { IEssence, IRole } from '../../../Interfaces/Data';
+import { ProtegeService } from 'src/app/protege.service';
+import { IEssence, IRole } from 'src/app/Interfaces/Data';
 
 @Component({
   selector: 'app-relation-adder',
@@ -10,9 +10,9 @@ import { IEssence, IRole } from '../../../Interfaces/Data';
 export class RelationAdderComponent implements OnInit {
   essence: IEssence;
   role: IRole;
-  essenceCaption: string = 'Сущность';
-  roleCaption: string = 'Роль';
-  adderToggle: boolean = false;
+  essenceCaption = 'Сущность';
+  roleCaption = 'Роль';
+  adderToggle = false;
 
   @Output() itemChanged = new EventEmitter();
   constructor(public protegeService: ProtegeService) { }
