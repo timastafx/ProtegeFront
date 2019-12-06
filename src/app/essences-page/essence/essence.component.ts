@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IEssence } from 'src/app/Interfaces/Data';
+import {IEssence, IRelationshipEssence} from 'src/app/Interfaces/Data';
 import { ProtegeService } from 'src/app/protege.service';
 import { IRelation } from './relation-adder/Interfaces';
 
@@ -29,8 +29,13 @@ export class EssenceComponent implements OnInit {
    */
   relationChanged(item: IRelation): void {
     this.item.relationships.push({
+      id: Date.now(),
       roleId: item.role.id,
       secondaryObjectId: item.essence.id
     });
+  }
+
+  relationDelete(item: IRelationshipEssence): void {
+    this.item.relationships = this.item.relationships.filter(relation => relation.id !== item.id);
   }
 }

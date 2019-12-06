@@ -23,10 +23,8 @@ export class RelationshipViewComponent implements OnInit {
   constructor(public protegeService: ProtegeService) { }
 
   ngOnInit() {
-    console.log(this.relationship);
     this.role = this.getRole();
     this.relationObject = this.getRelation();
-    console.log(this.role, this.relationObject);
   }
 
   /**
@@ -66,6 +64,6 @@ export class RelationshipViewComponent implements OnInit {
    * @description Обработка события удаления записи
    */
   deleteRelation(): void {
-    console.log(this.relationObject);
+    this.deleteItem.emit(this.relationship);
   }
 }

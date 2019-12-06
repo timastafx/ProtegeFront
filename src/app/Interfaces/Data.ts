@@ -71,6 +71,10 @@ export interface IRelationship {
  */
 export interface IRelationshipEssence {
   /**
+   * Уникальный идентификатор
+   */
+  id: number;
+  /**
    * Идентификатор роли
    */
   roleId: number;
@@ -156,6 +160,7 @@ const firstObject: IEssence = {
   classesId: 142524131,                   // firstCLass.id
   relationships: [
     {
+      id: 4362353,
       roleId: 35234524,           // firstRole
       secondaryObjectId: 945736347  // secondObject
     }

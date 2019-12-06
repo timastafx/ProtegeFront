@@ -30,6 +30,7 @@ export class ProtegeService {
     classesId: 1,                   // firstCLass.id
     relationships: [
       {
+        id: 4573463,
         roleId: 1,           // firstRole
         secondaryObjectId: 8543462334  // Екатерина
       }

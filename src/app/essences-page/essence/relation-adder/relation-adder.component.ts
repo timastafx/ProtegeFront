@@ -31,10 +31,14 @@ export class RelationAdderComponent implements OnInit {
   }
 
   relationAdd(): void {
-    this.itemChanged.emit({
-      role: this.role,
-      essence: this.essence
-    });
-    this.adderToggle = false;
+    if (this.role && this.essence) {
+      this.itemChanged.emit({
+        role: this.role,
+        essence: this.essence
+      });
+      this.adderToggle = false;
+    } else {
+      alert('Необходимо заполнить все поля!');
+    }
   }
 }
